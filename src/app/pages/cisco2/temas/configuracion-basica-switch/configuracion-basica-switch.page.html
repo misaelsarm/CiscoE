@@ -1,0 +1,153 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Configuración básica de un Switch</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Configuración básica de un switch
+            </ion-card-title>
+            <ion-card-title>
+                Configurar variable boot
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                La variable de entorno BOOT se establece con el comando boot system del modo de configuración global. Observe que el IOS se ubica en una carpeta distinta y que se especifica la ruta de la carpeta. Use el comando show boot para ver la configuración actual
+                del archivo de arranque de IOS.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema2/1.PNG"> </ion-img>
+            <br />
+            <ul>
+                <li>Verde: Comando</li>
+                <li>Rosa: Dispositivo de almacenamiento</li>
+                <li>Naranja: Ruta a la ubicación en el sistema de archivos</li>
+                <li>Violeta: Nombre del archivo de IOS</li>
+            </ul>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Recuperación tras un bloqueo del sistema
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                El cargador de arranque proporciona acceso al switch si no se puede usar el sistema operativo debido a la falta de archivos de sistema o al daño de estos. El cargador de arranque tiene una línea de comandos que proporciona acceso a los archivos almacenados
+                en la memoria flash.
+            </p>
+            <p>
+                Se puede acceder al cargador de arranque mediante una conexión de consola con los siguientes pasos:
+            </p>
+            <ul>
+                <li>
+                    Paso 1: Conecte una computadora al puerto de consola del switch con un cable de consola. Configure el software de emulación de terminal para conectarse al switch.
+                </li>
+                <li>Paso 2: Desconecte el cable de alimentación del switch.</li>
+                <li>
+                    Paso 3: Vuelva a conectar el cable de alimentación al switch, espere 15 segundos y, a continuación, presione y mantenga presionado el botón Mode (Modo) mientras el LED del sistema sigue parpadeando con luz verde.
+                </li>
+                <li>
+                    Paso 4: Continúe oprimiendo el botón Modo hasta que el LED del sistema se torne ámbar por un breve instante y luego verde, después suelte el botón Modo.
+                </li>
+                <li>
+                    Paso 5: Aparece la petición de entrada switch: del cargador de arranque en el software de emulación de terminal en la computadora.
+                </li>
+            </ul>
+            <p>
+                La línea de comandos de boot loader admite comandos para formatear el sistema de archivos flash, volver a instalar el software del sistema operativo y recuperar una contraseña perdida u olvidada. Por ejemplo, el comando dir se puede usar para ver una
+                lista de archivos dentro de un directorio específico, como se muestra en la figura.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema2/2.PNG"> </ion-img>
+            <br />
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Indicadores LED de los switches
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Los switches Cisco Catalyst tienen varios indicadores luminosos LED de estado. Puede usar los LED del switch para controlar rápidamente la actividad y el rendimiento del switch. Los diferentes modelos y conjuntos de características de los switches tienen
+                diferentes LED, y la ubicación de estos en el panel frontal del switch también puede variar.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema2/3.png"> </ion-img>
+            <br />
+            <p>
+                En la Imagen 1, se muestran los LED y el botón Mode de un switch Cisco Catalyst 2960. El botón Mode se utiliza para alternar entre el estado del puerto, el modo dúplex del puerto, la velocidad del puerto y el estado de alimentación por Ethernet (PoE [si
+                se admite]) de los LED del puerto. A continuación, se describe el propósito de los indicadores LED y el significado de los colores:
+            </p>
+            <ion-card-subtitle>
+                Significado de los colores del LED
+            </ion-card-subtitle>
+            <ul>
+                <li>
+                    LED del sistema: muestra si el sistema recibe alimentación y funciona correctamente. Si el LED está apagado, significa que el sistema no está encendido. Si el LED es de color verde, el sistema funciona normalmente. Si el LED es de color ámbar, el sistema
+                    recibe alimentación pero no funciona correctamente.
+                </li>
+                <li>
+                    LED del sistema de alimentación redundante (RPS): muestra el estado del RPS. Si el LED está apagado, el RPS está apagado o no está conectado correctamente. Si el LED es de color verde, el RPS está conectado y listo para proporcionar alimentación de respaldo.
+                    Si el LED parpadea y es de color verde, el RPS está conectado pero no está disponible porque está proporcionando alimentación a otro dispositivo. Si el LED es de color ámbar, el RPS está en modo de reserva o presenta una falla. Si
+                    el LED parpadea y es de color ámbar, la fuente de alimentación interna del switch presenta una falla, y el RPS está proporcionando alimentación.
+                </li>
+
+                <li>
+                    LED de estado del puerto: cuando el LED es de color verde, indica que se seleccionó el modo de estado del puerto. Este es el modo predeterminado. Al seleccionarlo, los indicadores LED del puerto muestran colores con diferentes significados. Si el LED
+                    está apagado, no hay enlace, o el puerto estaba administrativamente inactivo. Si el LED es de color verde, hay un enlace presente. Si el LED parpadea y es de color verde, hay actividad, y el puerto está enviando o recibiendo datos.
+                    Si el LED alterna entre verde y ámbar, hay una falla en el enlace. Si el LED es de color ámbar, el puerto está bloqueado para asegurar que no haya un bucle en el dominio de reenvío y no reenvía datos (normalmente, los puertos permanecen
+                    en este estado durante los primeros 30 segundos posteriores a su activación). Si el LED parpadea y es de color ámbar, el puerto está bloqueado para evitar un posible bucle en el dominio de reenvío.
+                </li>
+                <li>
+                    LED de modo dúplex del puerto: cuando el LED es de color verde, indica que se seleccionó el modo dúplex del puerto. Al seleccionarlo, los LED del puerto que están apagados están en modo semidúplex. Si el LED del puerto es de color verde, el puerto está
+                    en modo dúplex completo.
+                </li>
+                <li>
+                    LED de velocidad del puerto: indica que se seleccionó el modo de velocidad del puerto. Al seleccionarlo, los indicadores LED del puerto muestran colores con diferentes significados. Si el LED está apagado, el puerto funciona a 10 Mb/s. Si el LED es de
+                    color verde, el puerto funciona a 100 Mb/s. Si el LED parpadea y es de color verde, el puerto funciona a 1000 Mb/s.
+                </li>
+                <li>
+                    LED de modo de alimentación por Ethernet: si se admite alimentación por Ethernet, hay un LED de modo de PoE. Si el LED está apagado, indica que no se seleccionó el modo de alimentación por Ethernet, que a ninguno de los puertos se le negó el suministro
+                    de alimentación y ninguno presenta fallas. Si el LED parpadea y es de color ámbar, no se seleccionó el modo de alimentación por Ethernet, pero al menos a uno de los puertos se le negó el suministro de alimentación o uno de ellos presenta
+                    una falla de alimentación por Ethernet. Si el LED es de color verde, indica que se seleccionó el modo de alimentación por Ethernet, y los LED del puerto muestran colores con diferentes significados. Si el LED del puerto está apagado,
+                    la alimentación por Ethernet está desactivada. Si el LED del puerto es de color verde, la alimentación por Ethernet está activada. Si el LED del puerto alterna entre verde y ámbar, se niega la alimentación por Ethernet, ya que, si
+                    se suministra energía al dispositivo alimentado, se excede la capacidad de alimentación del switch. Si el LED parpadea y es de color ámbar, la alimentación por Ethernet está desactivada debido a una falla. Si el LED es de color ámbar,
+                    se inhabilitó la alimentación por Ethernet para el puerto.
+                </li>
+            </ul>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Administración básica de un switch
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Para el acceso a la administración remota de un switch, este se debe configurar con una dirección IP y una máscara de subred. Recuerde que para administrar un switch desde una red remota, se lo debe configurar con un gateway predeterminado. Este es un
+                proceso muy similar a la configuración de la información de dirección IP en los dispositivos host. En la Imagen 2, se debe asignar una dirección IP a la interfaz virtual del switch (SVI) de S1. La SVI es una interfaz virtual, no un puerto
+                físico del switch.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema2/4.png"> </ion-img>
+            <p>
+                SVI es un concepto relacionado con las VLAN. Las VLAN son grupos lógicos numerados a los que se pueden asignar puertos físicos. Los parámetros de configuración aplicados a una VLAN también se aplican a todos los puertos asignados a esa VLAN.
+            </p>
+            <p>
+                De manera predeterminada, el switch está configurado para que el control de la administración del switch se realice mediante la VLAN 1. Todos los puertos se asignan a la VLAN 1 de manera predeterminada. Por motivos de seguridad, se recomienda usar una
+                VLAN de administración distinta de la VLAN 1.
+            </p>
+            <p>
+                Tenga en cuenta que el propósito de esta configuración IP es solamente obtener acceso a la administración remota del switch; la configuración IP no permite que el switch enrute paquetes de capa 3.
+            </p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

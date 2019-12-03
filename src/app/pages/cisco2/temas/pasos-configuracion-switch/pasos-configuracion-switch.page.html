@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>pPasos de configuración</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Pasos para configurar el acceso a la administración básica de un switch con IPv4
+            </ion-card-title>
+            <ion-card-subtitle>
+                Paso 1: Configuración de la interfaz de administración
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <p>Se configura una dirección IPv4 y una máscara de subred en la SVI de administración del switch desde el modo de configuración de interfaz VLAN. Como se muestra en la figura 1, el comando interface vlan 99 se usa para ingresar al modo de configuración
+                de interfaz. Para configurar la dirección IPv4, se usa el comando ip address. El comando no shutdown habilita la interfaz. En este ejemplo, la VLAN 99 se configuró con la dirección IPv4 172.17.99.11.</p>
+            <ion-img src="../../../../../assets/img/cisco2/tema6/1.PNG">
+            </ion-img> <br>
+            <p>
+                La SVI para la VLAN 99 no se muestra como “up/up” hasta que se cree la VLAN 99 y haya un dispositivo conectado a un puerto del switch asociado a la VLAN 99. Para crear una VLAN con la id_de_vlan 99 y asociarla a una interfaz, use los siguientes comandos:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema6/2.PNG">
+            </ion-img> <br>
+            <ion-card-subtitle>
+                Paso 2: Configuración del gateway predeterminado
+            </ion-card-subtitle>
+            <p>
+                Si el switch se va a administrar de forma remota desde redes que no están conectadas directamente, se debe configurar con un gateway predeterminado. El gateway predeterminado es el router al que está conectado el switch. El switch reenvía los paquetes
+                IP con direcciones IP de destino fuera de la red local al gateway predeterminado. Como se muestra en la figura 2, R1 es el gateway predeterminado para S1. La interfaz en R1 conectada al switch tiene la dirección IPv4 172.17.99.1. Esta
+                es la dirección de gateway predeterminado para S1.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema6/3.PNG"></ion-img> <br>
+            <p>
+                Para configurar el gateway predeterminado del switch, use el comando ip default-gateway. Introduzca la dirección IPv4 del gateway predeterminado. El gateway predeterminado es la dirección IPv4 de la interfaz del router a la que está conectado el switch.
+                Use el comando copy running-config startup-config para realizar una copia de seguridad de la configuración.
+            </p>
+            <ion-card-subtitle>
+                Paso 3: Verificar la configuración
+            </ion-card-subtitle>
+            <p>
+                Como se muestra a continuación, el comando show ip interface brief es útil para determinar el estado de las interfaces virtuales y físicas. El resultado que se muestra confirma que la interfaz VLAN 99 se ha configurado con una dirección IPv4 y una máscara
+                de subred.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema6/4.PNG"></ion-img> <br>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

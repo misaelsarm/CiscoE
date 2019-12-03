@@ -1,0 +1,104 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Configuración ACL de IPv4 Estándar</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Comandos para configurar ACL
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>La sintaxis completa del comando de ACL estándar es la siguiente:</p>
+            <ion-img src="../../../../../assets/img/cisco2/tema1/1.PNG"></ion-img> <br>
+            <p>
+                En la siguiente tabla, se explica detalladamente la sintaxis para una ACL estándar.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema1/2.PNG"></ion-img> <br>
+            <p>
+                Las ACE pueden permitir o denegar un solo host o un rango de direcciones host. Para crear una instrucción de host en la ACL numerada 10 que permita un host específico con la dirección IPv4 192.168.10.10, debe introducir lo siguiente:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema1/3.PNG"></ion-img> <br>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Eliminacion de una ACL
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Para crear una instrucción que permita un rango de direcciones IPv4 en una ACL numerada 10 que permite todas las direcciones IPv4 en la red 192.168.10.0/24, debe introducir lo siguiente:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema1/4.PNG"></ion-img> <br>
+            <p>
+                Para eliminar la ACL, se utiliza el comando de configuración global no access-list. La ejecución del comando show access-list confirma que se eliminó la lista de acceso 10.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema1/5.PNG"></ion-img> <br>
+            <p>
+                La ACL que se muestra a continuación, que es bastante simple, se utiliza a modo de ejemplo. Cuando se revisa la ACL en la configuración mediante el comando show running-config, también se muestra el comentario.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema1/6.PNG"></ion-img> <br>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Ejemplos de ACL estándar numeradas IPv4
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Continuando con el ejemplo de la imagen anterior, miremos los siguientes comandos: (Denegación de un host específico y admisión de una subred específica)
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema1/7.PNG"></ion-img> <br>
+            <p>
+                La ACL se vuelva a aplicar a la interfaz S0/0/0 en sentido de salida.
+            </p>
+            <p>
+                Ahora mostramos un ejemplo de una ACL que deniega un host específico. Esta ACL reemplaza el ejemplo anterior. En este ejemplo, se sigue bloqueando el tráfico del host PC1, pero se permite el resto del tráfico.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema1/8.PNG"></ion-img> <br>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Edición de ACL estándar con nombre
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                En un ejemplo anterior, se utilizaron los números de secuencia para editar una ACL estándar numerada IPv4. Mediante una referencia a los números de secuencia de la instrucción, se pueden insertar o eliminar fácilmente instrucciones individuales. Este
+                método también se puede utilizar para editar las ACL estándar con nombre.
+            </p>
+            <p>
+                En el siguiente esquema, se muestra un ejemplo de inserción de una línea en una ACL con nombre.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema1/9.PNG"></ion-img> <br>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Verificar las ACL
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Como se muestra a continuación, el comando show ip interface se utiliza para verificar la ACL en la interfaz. El resultado de este comando incluye el número o el nombre de la lista de acceso y el sentido en el que se aplicó la ACL. El resultado muestra
+                que la lista de acceso 1 se aplica a la interfaz de salida S0/0/0 del router R1 y que la lista de acceso NO_ACCESS se aplica a la interfaz g0/0, también en sentido de salida.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema1/10.PNG"></ion-img> <br>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

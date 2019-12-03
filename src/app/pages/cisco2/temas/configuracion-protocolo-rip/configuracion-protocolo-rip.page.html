@@ -1,0 +1,151 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Configuración del protocolo RIP</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Configuración del protocolo RIP
+            </ion-card-title>
+            <ion-card-title>
+                Modo de configuracion de RIP
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Consulte la topología de referencia en la Imagen 1 y la tabla de direccionamiento en la Imagen 2:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/1.png">
+            </ion-img> <br>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/2.png">
+            </ion-img> <br>
+            <p>
+                En esta situación, todos los routers se configuraron con funciones de administración básicas, y todas las interfaces identificadas en la topología de referencia están configuradas y habilitadas. No hay rutas estáticas configuradas ni protocolos de routing
+                habilitados, por lo que el acceso remoto de red es imposible en ese momento. RIPv1 se utiliza como protocolo de routing dinámico. Para habilitar RIP, utilice el comando router rip, como se muestra a continuación:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/3.png">
+            </ion-img> <br>
+            <p>
+                Este comando no inicia en forma directa el proceso del RIP. En cambio, proporciona acceso al modo de configuración del router, donde se configuran los parámetros de routing RIP. Al habilitar RIP, la versión predeterminada es RIPv1.
+            </p>
+            <p>
+                Para deshabilitar y eliminar RIP, utilice el comando de configuración global no router rip. Este comando detiene el proceso RIP y elimina todas las configuraciones RIP existentes. A continuación, se muestran los diversos comandos RIP que se pueden configurar.
+                En esta sección, se abordan las palabras clave resaltadas.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/4.PNG">
+            </ion-img>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/4.1.PNG">
+            </ion-img>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/4.2.PNG">
+            </ion-img> <br>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Anuncio de redes
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Al ingresar en el modo de configuración de router RIP, el router recibe instrucciones para que ejecute RIPv1. Pero el router aún necesita conocer las interfaces locales que deberá utilizar para comunicarse con otros routers, así como las redes conectadas
+                en forma local que deberá publicar a dichos routers.
+            </p>
+            <p>
+                Para habilitar el routing RIP para una red, utilice network dirección de red (comando del modo de configuración del router) Introduzca la dirección de red con clase para cada red conectada directamente.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/5.png">
+            </ion-img> <br>
+            <p>
+                Teniendo en cuenta el ejemplo anterior, vamos a anunciar las redes conectadas directamente al R1, R2 y R3.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/6.PNG"></ion-img><br>
+            <p>
+                Este comando realiza lo siguiente:
+            </p>
+            <ul>
+                <li> Habilita el RIP en todas las interfaces que pertenecen a una red específica. Hace que las interfaces asociadas ahora envíen y reciban actualizaciones RIP. </li>
+                <li> Publica la red especificada en las actualizaciones de enrutamiento RIP enviadas a otros routers cada 30 segundos. </li>
+            </ul>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Verificar el routing del RIP
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                El comando show ip protocols muestra los parámetros del protocolo de routing IPv4 configurados actualmente en el router. Este resultado se muestra a continuación y confirma la mayoría de los parámetros de RIP, incluido lo siguiente:
+            </p>
+            <ol>
+                <li> El routing RIP está configurado y en ejecución en el router R1. </li>
+                <li> Los valores de diversos temporizadores; por ejemplo, el R1 envía la siguiente actualización de routing en 16 segundos. </li>
+                <li> La versión de RIP configurada actualmente es RIPv1. </li>
+                <li> El R1 realiza la sumarización en el límite de la red con clase. </li>
+                <li> El R1 anuncia las redes con clase. Estas son las redes que el R1 incluye en sus actualizaciones RIP. </li>
+                <li> Los vecinos RIP se indican mediante la inclusión de la dirección IP del siguiente salto, la AD asociada que el R2 utiliza para las actualizaciones enviadas por ese vecino y el momento en que dicho vecino recibió la última actualización.
+                </li>
+            </ol>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/7.PNG"></ion-img><br>
+            <p>
+                El comando show ip route muestra las rutas RIP instaladas en la tabla de routing. Comprobamos que R1 ahora tiene información acerca de las redes resaltadas.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/8.PNG"></ion-img><br>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Habilitación y verificación de RIPv2
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                De manera predeterminada, cuando hay un proceso de RIP configurado en un router Cisco, este ejecuta RIPv1. Sin embargo, a pesar de que el router sólo envía mensajes de RIPv1, puede interpretar los mensajes de RIPv1 y RIPv2. Los routers RIPv1 simplemente
+                ignoran los campos de RIPv2 en la entrada de ruta.
+            </p>
+            <p>
+                Utilice el comando del modo de configuración del router version 2 para habilitar RIPv2:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/9.PNG"></ion-img><br>
+            <p>
+                Observe la forma en que el comando show ip protocols verifica que el R2 ahora está configurado para enviar y recibir solamente mensajes de versión 2. El proceso de RIP ahora incluye la máscara de subred en todas las actualizaciones, lo que hace que RIPv2
+                sea un protocolo de routing sin clase.
+            </p>
+            <p>
+                A continuación, se verifica que ya no haya rutas RIP en la tabla de routing. Esto se debe a que el R1 ahora está a la escucha de actualizaciones RIPv2 únicamente. El R2 y el R3 todavía envían actualizaciones RIPv1. Por lo tanto, se debe configurar el
+                comando version 2 en todos los routers en el dominio de routing.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/10.PNG"></ion-img><br>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Deshabilitar el resumen automatico
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Como se muestra en el siguiente resultado, RIPv2 resume automáticamente las redes en los límites de red principales de manera predeterminada, al igual que RIPv1.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/11.PNG"></ion-img><br>
+            <p>
+                Para modificar el comportamiento predeterminado de RIPv2 de sumarización automática, utilice el comando del modo de configuración del router no auto-summary, como se muestra:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema3/12.PNG"></ion-img><br>
+            <p>
+                Este comando no tiene ningún efecto cuando se utiliza RIPv1. Cuando se deshabilita la sumarización automática, RIPv2 ya no resume las redes a su dirección con clase en routers fronterizos. RIPv2 ahora incluye todas las subredes y sus máscaras correspondientes
+                en sus actualizaciones de routing. El comando show ip protocols ahora indica lo siguiente: automatic network summarization is not in effect (el resumen de red automático no está en vigencia).
+            </p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

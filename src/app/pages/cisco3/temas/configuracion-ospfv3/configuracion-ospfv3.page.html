@@ -1,0 +1,64 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Configuración de OSPFV3</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Configuración de OSPFV3 de área única
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                A continuación, se presenta un repaso de una implementación básica del protocolo de routing OSPFv3 para IPv6.
+            </p>
+            <p>
+                En el ejemplo de la Imagen 11, se muestra la topología que se usa para configurar OSPFv3.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco3/tema3/1.png">
+            </ion-img> <br>
+            <p>
+                En la Imagen 12, en el modo de configuración del router OSPFv3 del R1, la ID del router se asigna manualmente y el ancho de banda de referencia se ajusta para las interfaces rápidas. A continuación, se configuran las interfaces que participan en OSPFv3.
+                También se configura la interfaz Gigabit Ethernet 0/0 para reflejar su ancho de banda real.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco3/tema3/2.png">
+            </ion-img> <br>
+            <p>
+                En la Imagen 13, en el modo de configuración del router OSPFv3 del R2, la ID del router se asigna manualmente y el ancho de banda de referencia se ajusta para las interfaces rápidas. A continuación, se configuran las interfaces que participan en OSPFv3.
+                Aquí también se configura la interfaz Gigabit Ethernet 0/0 para reflejar su ancho de banda real.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco3/tema3/3.png">
+            </ion-img> <br>
+            <ion-card-subtitle>
+                Verificacion de OSPFV3 de área única
+            </ion-card-subtitle>
+            <p>
+                Finalmente, algunos de los comandos útiles para verificar OSPFv3 son los siguientes: (se muestra el resultado correspondiente a cada comando de verificación que se introdujo en el R1.)
+            </p>
+            <p>
+                show ipv6 ospf neighbor: comando para verificar que el router formó una adyacencia con los routers vecinos. Si no se muestra la ID del router vecino o este no se muestra en el estado FULL, los dos routers no formaron una adyacencia OSPF.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco3/tema3/4.png">
+            </ion-img> <br>
+            <p>
+                show ipv6 protocols: este comando proporciona una manera rápida de verificar información fundamental de configuración de OSPFv3, incluidas la ID del proceso OSPF, la ID del router y las interfaces habilitadas para OSPFv3.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco3/tema3/5.png"></ion-img> <br>
+            <p>
+                show ipv6 route ospf: este comando proporciona datos específicos sobre rutas OSPFv3 en la tabla de routing.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco3/tema3/6.png"></ion-img> <br>
+            <p>
+                show ipv6 ospf interface brief: comando útil para mostrar un resumen y el estado de las interfaces con OSPFv3 habilitado.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco3/tema3/7.png"></ion-img> <br>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

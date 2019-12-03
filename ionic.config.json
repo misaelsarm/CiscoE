@@ -1,0 +1,7 @@
+{
+  "name": "CISCO",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

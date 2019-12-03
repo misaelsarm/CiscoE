@@ -1,0 +1,113 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Direccionamiento de red IPv6</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Necesidad de utilizar IPv6
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                IPv6 está diseñado para ser el sucesor de IPv4, pero ¿por qué? te explicamos brevemente:
+            </p>
+            <ul>
+                <li> El agotamiento del espacio de direcciones IPv4 fue el factor que motivó la migración a IPv6. Las proyecciones indican que se acabarán las direcciones IPv4 de los cinco RIR entre 2015 y 2020. </li>
+
+                <li> Con una creciente población de Internet, un espacio limitado de direcciones IPv4, problemas con la NAT y con Internet de las cosas, llegó el momento de iniciar la transición a IPv6. </li>
+
+                <li> IPv4 tiene un máximo teórico de 4300 millones de direcciones, más las direcciones privadas en combinación con NAT. </li>
+
+                <li> IPv6 tiene un mayor espacio de direcciones de 128 bits, que proporciona 340 sextillones de direcciones. </li>
+
+                <li> IPv6 resuelve las limitaciones de IPv4 e incluye mejoras adicionales, como ICMPv6. </li>
+            </ul>
+
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Coexistencia de IPv4 e IPv6
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                No hay una única fecha para realizar la transición a IPv6. En un futuro cercano, IPv4 e IPv6 coexistirán. Se espera que la transición demore años. El IETF creó diversos protocolos y herramientas para ayudar a los administradores de redes a migrar las
+                redes a IPv6. Las técnicas de migración pueden dividirse en tres categorías:
+            </p>
+            <ol>
+                <li> <b>Dual-stack (Doble-pila):</b> permite que IPv4 e IPv6 coexistan en la misma red. Los dispositivos ejecutan stacks de protocolos IPv4 e IPv6 de manera simultánea.</li>
+
+                <li> <b>Tunelización: </b> es un método para transportar un paquete IPv6 en una red IPv4. El paquete IPv6 se encapsula dentro de un paquete IPV4.</li>
+
+                <li> <b>Traducción:</b> la traducción de direcciones de red 64 (NAT64) permite que los dispositivos habilitados para IPv6 se comuniquen con los dispositivos habilitados para IPv4 mediante una técnica de traducción similar a NAT para IPv4. Un
+                    paquete IPv6 se traduce a un paquete IPv4 y viceversa.</li>
+            </ol>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Representacion de dirección IPv6
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Las direcciones IPv6 tienen una longitud de 128 bits y se escriben como una cadena de valores hexadecimales.
+            </p>
+            <ul>
+                <li> El sistema hexadecimal es un sistema de base dieciséis. </li>
+                <li> El sistema de numeración de base 16 utiliza los números del 0 al 9 y las letras de la A a la F. </li>
+                <li> Se pueden representar cuatro bits (medio byte) con un único valor hexadecimal. </li>
+
+            </ul>
+            <ion-img src="../../../../../assets/img/cisco1/tema2_/1.png"></ion-img> <br>
+            <ion-card-subtitle>
+                Reglas para direcciones IPv6
+            </ion-card-subtitle>
+            <p>
+                El formato de escritura de una dirección IPv6 debe tomar en cuenta las siguientes reglas:
+            </p>
+            <ion-card-subtitle>
+                Regla 1: Omitir los ceros iniciales
+            </ion-card-subtitle>
+            <p>
+                La primera regla que permite reducir la notación de direcciones IPv6 es que se puede omitir cualquier 0 (cero) inicial en cualquier sección de 16 bits o hexteto.
+            </p>
+            <ul>
+                <li> 01AB puede representarse como 1AB. </li>
+                <li> 09F0 puede representarse como 9F0. </li>
+                <li> 0A00 puede representarse como A00. </li>
+                <li> 00AB puede representarse como AB. </li>
+
+            </ul>
+            <ion-card-subtitle>
+                Regla 2: Omitir los segmentos que contienen solamente ceros
+            </ion-card-subtitle>
+            <p> Ejemplo: FE80:0:0:0:2AA:FF:FE9A:4CA3 se puede reducir a FE80::2AA:FF:FE9A:4CA3</p>
+            <ion-card-subtitle>
+                Longitud de prefijo
+            </ion-card-subtitle>
+            <p>
+                IPv6 no utiliza la notación decimal punteada de máscara de subred. La longitud de prefijo indica la porción de red de una dirección IPv6 mediante el siguiente formato:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/tema2_/2.png">
+
+            </ion-img> <br>
+            <ul>
+                <li> Dirección IPv6 /Longitud de prefijo IPv6</li>
+                <li> La longitud de prefijo puede ir de 0 a 128.</li>
+                <li> La longitud de prefijo típica es /64.</li>
+
+            </ul>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

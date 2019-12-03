@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Listas de control de acceso ACL</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Listas de Control de Acceso (ACL): Funcionamiento y creación
+            </ion-card-title>
+            <ion-card-subtitle>
+                ¿Que es la lista de control de acceso?
+
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Una ACL es una serie de comandos del IOS que controlan si un router reenvía o descarta paquetes según la información que se encuentra en el encabezado del paquete. Las ACL son una de las características del software IOS de Cisco más utilizadas.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema5/1.png">
+            </ion-img> <br>
+            <ion-card-subtitle>
+                Tareas de laa ACL
+            </ion-card-subtitle>
+            <P>
+                Cuando se las configura, las ACL realizan las siguientes tareas:
+            </P>
+            <ul>
+                <li> <b> Limitan el tráfico de la red para aumentar su rendimiento.</b> Por ejemplo, si la política corporativa no permite el tráfico de video en la red, se pueden configurar y aplicar ACL que bloqueen el tráfico de video. Esto reduciría considerablemente
+                    la carga de la red y aumentaría su rendimiento.</li>
+                <li> <b> Proporcionan control del flujo de tráfico.</b> Las ACL pueden restringir la entrega de actualizaciones de routing para asegurar que las actualizaciones provienen de un origen conocido.</li>
+                <li> <b> Proporcionan un nivel básico de seguridad para el acceso a la red.</b> Las ACL pueden permitir que un host acceda a una parte de la red y evitar que otro host acceda a la misma área.</li>
+                <li> <b> Filtran el tráfico según el tipo de tráfico.</b> Por ejemplo, una ACL puede permitir el tráfico de correo electrónico, pero bloquear todo el tráfico de Telnet.</li>
+                <li> <b> Filtran a los hosts para permitirles o denegarles el acceso a los servicios de red.</b> Las ACL pueden permitirles o denegarles a los usuarios el acceso a determinados tipos de archivos, como FTP o HTTP.</li>
+            </ul>
+            <ion-card-subtitle>
+                Funcionamiento de las ACL
+            </ion-card-subtitle>
+            <ion-img src="../../../../../assets/img/cisco2/tema5/2.png"></ion-img>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

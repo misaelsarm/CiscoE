@@ -1,0 +1,86 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Cable de cobre</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-title>
+                Cable de cobre
+            </ion-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <p>
+                Las redes utilizan medios de cobre porque son económicos y fáciles de instalar, y tienen baja resistencia a la corriente eléctrica. Sin embargo, los medios de cobre se ven limitados por la distancia y la interferencia de señales como por ejemplo:
+            </p>
+            <ul>
+                <li>
+                    Interferencia electromagnética (EMI) o interferencia de radiofrecuencia (RFI): Las posibles fuentes de EMI y RFI incluyen las ondas de radio y dispositivos electromagnéticos como las luces fluorescentes o los motores eléctricos.
+                </li>
+                <li>
+                    Crosstalk: se trata de una perturbación causada por los campos eléctricos o magnéticos de una señal de un hilo a la señal de un hilo adyacente.
+                </li>
+            </ul>
+            <p>
+                Dentro de los medios de cobre existen tres tipos principales de medios de cobre que se utilizan en las redes:
+            </p>
+            <ul>
+                <li>
+                    Par trenzado no blindado (UTP)
+                </li>
+                <li>
+                    Par trenzado blindado (STP)
+                </li>
+                <li>
+                    Coaxial
+                </li>
+            </ul>
+            <ion-card-header>
+                <ion-card-subtitle>
+                    Cable de par trenzado no blindado (UTP)
+                </ion-card-subtitle>
+            </ion-card-header>
+            <p>
+                El cableado UTP, se utiliza para interconectar hosts de red con dispositivos intermediarios de red, como switches y routers.
+            </p>
+            <p>
+                En las redes LAN, el cable UTP consta de cuatro pares de hilos codificados por colores que están trenzados entre sí y recubiertos con un revestimiento de plástico flexible que los protege contra daños físicos menores. El trenzado de los hilos ayuda a
+                proteger contra las interferencias de señales de otros hilos.
+            </p>
+            <ion-card-subtitle>
+                Tipos de cables UTP:
+            </ion-card-subtitle>
+            <p>
+                Según las diferentes situaciones, es posible que los cables UTP necesiten armarse según las diferentes convenciones para los cableados.
+            </p>
+            <ul>
+                <li>
+                    <b>Cable directo de Ethernet:</b> Por lo general, se utiliza para interconectar un host con un switch y un switch con un router.
+                </li>
+                <li>
+                    <b>Cable cruzado Ethernet:</b> cable utilizado para interconectar dispositivos similares. Por ejemplo, switch a un switch, un host a un host o un router a un router.
+                </li>
+                <li>
+                    <b>Cable de consola:</b> cable exclusivo de Cisco utilizado para conectar una estación de trabajo a un puerto de consola de un router o de un switch.
+                </li>
+            </ul>
+            <ion-img src="../../../../../assets/img/medios-capa-fisica/1.png"> </ion-img> <br>
+            <ion-card-subtitle>
+                Cable de par trenzado blindado (STP)
+            </ion-card-subtitle>
+            <p> El par trenzado blindado (STP) proporciona una mejor protección contra ruido que el cableado UTP. Sin embargo, en comparación con el cable UTP, el cable STP es mucho más costoso y difícil de instalar. Al igual que el cable UTP, el STP utiliza
+                un conector RJ-45.</p>
+            <ion-img src="../../../../../assets/img/medios-capa-fisica/2.png"> </ion-img> <br>
+            <p>
+                El cable STP combina las técnicas de blindaje para contrarrestar la EMI y la RFI, y el trenzado de hilos para contrarrestar el crosstalk. Para obtener los máximos beneficios del blindaje, los cables STP se terminan con conectores de datos STP blindados
+                especiales. Si el cable no se conecta a tierra correctamente, el blindaje puede actuar como antena y captar señales no deseadas.
+            </p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

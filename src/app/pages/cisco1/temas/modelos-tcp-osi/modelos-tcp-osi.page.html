@@ -1,0 +1,75 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Modelos TCP y OSI</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                El modelo de referencia OSI
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Ofrece lista de funciones y servicios que se pueden presentar en cada capa.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/tema5/1.png"></ion-img>
+            <ul>
+                <li> <b> Capa 1 o Capa física: </b> describen los medios físicos para la transmisión de bits hacia y desde un dispositivo de red </li>
+                <li> <b> Capa 2 o Capa de enlace de datos:  </b>intercambian tramas de datos entre dispositivos en un medio común </li>
+                <li> <b> Capa 3 o Capa de Red: </b> proporciona servicios para intercambiar los datos individuales entre redes. </li>
+                <li> <b> Capa 4 o Capa de transporte:  </b>proporciona servicios para segmentar, transferir y reensamblar los datos </li>
+                <li> <b> Capa 5 o Capa de sesión: </b> proporciona servicios a la capa de presentación administrar el intercambio de datos</li>
+                <li> <b> Capa 6 o Capa de presentación:  </b>proporciona una representación común de los datos transferidos entre los servicios de la capa de aplicación </li>
+                <li> <b> Capa 7 o Capa de aplicación: </b> contiene protocolos utilizados para comunicaciones proceso a proceso </li>
+            </ul>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                El modelo de protocolo TCP/IP
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>El modelo de protocolo TCP/IP para comunicaciones de internetwork se creó a principios de la década de los setenta y se conoce con el nombre de modelo de Internet. Como se muestra en la figura, define cuatro categorías de funciones que deben
+                ocurrir para que las comunicaciones se lleven a cabo correctamente.
+            </p>
+            <ul>
+                <li> <b> Capa Aplicación: </b> Representa datos para el usuario más el control de codificación y de diálogo.</li>
+                <li> <b> Capa Transporte: </b> Admite la comunicación entre distintos dispositivos a través de diversas redes.</li>
+                <li> <b> Capa Internet: </b> Determina el mejor camino a través de una red.</li>
+                <li> <b> Capa Acceso a la red: </b> Controla los dispositivos del hardware y los medios que forman la red.</li>
+            </ul>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Comparación del modelo OSI y el modelo TCP/IP
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Los protocolos que forman la suite de protocolos TCP/IP pueden describirse en términos del modelo de referencia OSI. En el modelo OSI, la capa de acceso a la red y la capa de aplicación del modelo TCP/IP están subdivididas para describir funciones discretas
+                que deben producirse en estas capas.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/tema5/2.png"></ion-img>
+            <p>
+                Las principales que podemos notar son:
+            </p>
+            <ul>
+                <li> En la capa de acceso a la red, no se especifica cuáles protocolos utilizar cuando se transmite por un medio físico; solo describe la transferencia desde la capa de Internet a los protocolos de red física. Las capas OSI 1 y 2 tratan los
+                    procedimientos necesarios para acceder a los medios y las maneras físicas de enviar datos por la red. </li>
+                <li> La capa de aplicación TCP/IP incluye un número de protocolos que proporciona funcionalidad específica a una variedad de aplicaciones de usuario final. Las capas 5, 6 y 7 del modelo OSI se utilizan como referencias para proveedores y desarrolladores
+                    de software de aplicación para fabricar productos que funcionan en redes. </li>
+            </ul>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

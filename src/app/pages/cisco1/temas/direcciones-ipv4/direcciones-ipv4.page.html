@@ -1,0 +1,216 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Direcciones IPv4</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Direcciones IPv4
+            </ion-card-title>
+        </ion-card-header>
+
+        <ion-card-content>
+            <p>
+                Los hosts, los servidores y los dispositivos de red usan el direccionamiento binario, que consisten en números 0 y 1, denominados bits.
+            </p>
+            <ul>
+                <li>
+                    Constan de una cadena de 32 bits, divididos en cuatro secciones denominadas octetos.
+                </li>
+                <li>
+                    Cada octeto contiene 8 bits (o 1 byte) separados por un punto.
+                </li>
+            </ul>
+            <ion-img src="../../../../../assets/img/cisco1/tema2/1.png">
+            </ion-img>
+            <br>
+            <p>
+                El trabajo con números binarios puede ser desafiante. Para que esto resulte más fácil, las direcciones IPv4 suelen expresarse mediante una notación decimal punteada
+            </p>
+
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Estructura de una dirección IPv4
+            </ion-card-title>
+            <ion-card-subtitle>
+                Porciones de red y de host
+            </ion-card-subtitle>
+
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Es importante entender la notación binaria para determinar si dos hosts están en la misma red.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/tema2/2.png">
+            </ion-img>
+            <br>
+            <p>
+                Los bits dentro de la porción de red de la dirección deben ser idénticos para todos los dispositivos que residen en la misma red. Los bits dentro de la porción de host de la dirección deben ser únicos para identificar un host específico dentro de una
+                red. Si dos hosts tienen el mismo patrón de bits en la porción de red especificada de la secuencia de 32 bits, esos dos hosts residen en la misma red.
+            </p>
+            <ion-card-subtitle>
+                La máscara de subred
+            </ion-card-subtitle>
+            <p>
+                La máscara de subred se utiliza para determinar la porción de red de una dirección IP.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/tema2/3.png">
+            </ion-img>
+            <br>
+            <p>
+                Los 1 de la máscara de subred identifican la porción de red, mientras que los 0 identifican la porción de host. Para identificar las porciones de red y de host de una dirección IPv4, se compara la máscara de subred con la dirección IPv4 bit por bit, de
+                izquierda a derecha. El proceso real que se usa para identificar la porción de red y la porción de host se denomina AND.
+
+            </p>
+            <ion-card-subtitle>
+                AND lógico
+            </ion-card-subtitle>
+            <p>
+                Para identificar la dirección de red de un host IPv4, se recurre a la operación lógica AND para la dirección IPv4, bit por bit, con la máscara de subred. El uso de la operación AND entre la dirección y la máscara de subred produce la dirección de red.
+            </p>
+            <p>
+                Para demostrar cómo se usa AND para detectar una dirección de red, piense en un host con la dirección IPv4 192.168.10.10 y la máscara de subred 255.255.255.0. En la siguiente imagen, se muestra la dirección de host IPv4 y la conversión a dirección binaria.
+                También la dirección binaria de la máscara de subred del host.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/tema2/4.png">
+            </ion-img> <br>
+            <p>
+                En las secciones resaltadas en amarillo, se identifican los bits AND que produjeron un 1 binario en la fila de Resultados AND. Todas las demás comparaciones de bits producen 0 binarios. Observe cómo el último octeto ya no tiene bits 1 binarios.
+            </p>
+            <p>
+                Por último, se muestra la dirección de red resultante 192.168.10.0 255.255.255.0. Por lo tanto, el host 192.168.10.10 está en la red 192.168.10.0 255.255.255.0.
+            </p>
+            <ion-card-subtitle>
+                Longitud de prefijo
+            </ion-card-subtitle>
+            <p>
+                La longitud de prefijo es el número de bits fijados en 1 en la máscara de subred.
+            </p>
+            <p>
+                Se escribe mediante la “notación de barra diagonal”, es decir, una “/” seguida por el número de bits fijados en 1. Por lo tanto, cuente el número de bits en la máscara de subred y anteponga una barra diagonal.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/tema2/5.png">
+            </ion-img> <br>
+            <ion-card-subtitle>
+                Direcciones de red, de host y de difusión
+            </ion-card-subtitle>
+            <p>
+                Cada dirección de red contiene (o identifica) direcciones de host y una dirección de difusión, como se describe a continuación:
+            </p>
+            <p>
+                <b>Dirección de red: </b> La dirección y la máscara de subred hacen referencia a una red. Todos los hosts dentro de la red comparten la misma dirección de red. La porción de host se compone solo de ceros. (192.168.10.0/24)
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/tema2/6.png">
+            </ion-img> <br>
+            <p>
+                Direcciones de host: Direcciones IP únicas asignadas a los hosts y a los dispositivos. La porción de host siempre contiene ceros y unos combinados, pero nunca ceros o unos solamente.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/tema2/7.png">
+            </ion-img> <br>
+            <ol>
+                <li>
+                    Primera dirección de host: Primera dirección IP de host disponible en la red. La porción de host siempre se compone de todos ceros, excepto el último número, que es un uno. (192.168.10.1/24)
+                </li>
+                <li>
+                    Ultima dirección de host: Última dirección IP de host disponible en la red. La porción de host siempre se compone de todos números uno, excepto el último. que es un cero. (192.168.10.254/24)
+                </li>
+            </ol>
+            <p>Dirección de difusión: Una dirección especial que se comunica con todos los hosts en una red. por ejemplo, cuando un host envíe un paquete a la dirección IPv4 de difusión de la red, y todos los demás hosts de la red reciben el paquete. La
+                dirección de difusión utiliza la dirección más alta en el rango de la red. La porción de host se compone solo de unos. (192.168.10.255/24)</p>
+            <ion-img src="../../../../../assets/img/cisco1/tema2/8.png"></ion-img>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Unidifusión, difusión y multidifusión IPv4
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>En una red IPv4, los hosts pueden comunicarse de tres maneras diferentes:</p>
+            <ul>
+                <li>
+                    <b>Unidifusión (Unicast):</b> proceso por el cual se envía un paquete de un host a un host individual.
+                </li>
+                <li>
+                    <b>Difusión (Broadcast):</b> proceso por el cual se envía un paquete de un host a todos los hosts en la red.
+                </li>
+            </ul>
+            <ion-card-title>
+                Tipos de direcciones IPv4
+            </ion-card-title>
+            <ion-card-subtitle>
+                Direcciones IPv4 públicas y privadas
+            </ion-card-subtitle>
+            <p>
+                Las direcciones IPv4 públicas son direcciones que se enrutan globalmente entre los routers de los ISP. Existen bloques de direcciones denominadas direcciones privadas que la mayoría de las organizaciones usan para asignar direcciones IPv4 a los hosts
+                internos. Direcciones privadas:
+            </p>
+            <ul>
+                <li>
+                    10.0.0.0/8 o 10.0.0.0 a 10.255.255.255
+                </li>
+                <li>
+                    172.16.0.0/12 o 172.16.0.0 a 172.31.255.255
+                </li>
+                <li>
+                    192.168.0.0/16 o 192.168.0.0 a 192.168.255.25
+                </li>
+            </ul>
+            <ion-card-subtitle>
+                Direcciones IPv4 de usuarios especiales
+            </ion-card-subtitle>
+            <p>
+                Existen direcciones especiales que pueden asignarse a los hosts, pero con restricciones respecto de la forma en que dichos hosts pueden interactuar dentro de la red.
+            </p>
+            <ul>
+                <li>
+                    <b>Direcciones de red y de broadcast:</b> no es posible asignar a hosts la primera ni la última dirección de cada red.
+                </li>
+                <li>
+                    <b>Direcciones de bucle invertido (loopback):</b> 127.0.0.1 a 127.255.255.254 (127.0.0.0 /8), es una dirección especial que los hosts utilizan para dirigir tráfico a sí mismos
+                </li>
+                <li>
+                    <b>Dirección link-local o direcciones con asignación de direcciones IP privadas automática (APIPA):</b> las direcciones de 169.254.0.1 a 169.254.255.254 (169.254.0.0/16) se puede asignar automáticamente al host local.
+                </li>
+                <li>
+                    <b>Direcciones TEST-NET:</b> las direcciones de 192.0.2.0 a 192.0.2.255 (192.0.2.0/24) se reservan para fines de enseñanza y aprendizaje, y se utilizan en ejemplos de documentos y de redes.
+                </li>
+                <li>
+                    <b>Direcciones experimentales:</b> las direcciones de 240.0.0.0 a 255.255.255.254 se indican como reservadas.
+                </li>
+            </ul>
+            <ion-card-subtitle>
+                Direccionamiento con clase antigua
+            </ion-card-subtitle>
+            <p>
+                En 1981, las direcciones IPv4 de Internet se asignaban mediante el direccionamiento con clase, según se define en RFC 790, Números asignados. A los clientes se les asignó una dirección de red basada en una de tres clases: A, B, o C. RFC dividía los rangos
+                de unidifusión en clases específicas denominadas:
+            </p>
+            <ul>
+                <li>
+                    <b>Clase A (0.0.0.0/8 a 127.0.0.0/8):</b> diseñada para admitir redes extremadamente grandes, con más de 16 millones de direcciones de host. Usaba un prefijo /8 fijo donde el primer octeto indicaba la dirección de red y los tres octetos
+                    restantes eran para las direcciones de host.
+                </li>
+                <li>
+                    <b>Clase B (128.0.0.0 /16 a 191.255.0.0 /16):</b> diseñada para satisfacer la necesidad de redes de tamaño moderado a grande, con hasta 65 000 direcciones de host. Usaba un prefijo /16 fijo donde los dos octetos de valor superior indicaban
+                    la dirección de red y los dos octetos restantes eran para las direcciones de host.
+                </li>
+                <li>
+                    <b>Clase C (192.0.0.0 /24 a 223.255.255.0 /24):</b> diseñada para admitir redes pequeñas con un máximo de 254 hosts. Usaba un prefijo /24 fijo donde los tres primeros octetos indicaban la red y el octeto restante era para las direcciones
+                    de host.
+                </li>
+            </ul>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>

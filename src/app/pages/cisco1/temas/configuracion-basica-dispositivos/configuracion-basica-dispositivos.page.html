@@ -1,0 +1,161 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title class="ion-text-wrap">Configuración básica de dispositivos Cisco</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Configuracion de dispositivos Cisco: Nombres de host</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Para colocarle un nombre al dispositivo debe introducir el comando hostname y para eliminar el nombre de host configurado y regresar a la petición de entrada predeterminada, utilice el comando de configuración global no hostname. Así es como lo configuramos
+                en la consola:
+            </p>
+            <br>
+            <ion-img src="../../../../../assets/img/cisco1/1.PNG"> </ion-img>
+            <br>
+            <p>
+                En cuánto a qué nombre de host (hostname) colocarle a los dispositivos, debe tener en cuenta lo siguiente:
+            </p>
+            <ul>
+                <li>Debe comenzar con una letra</li>
+                <li>No debe de contener espacios</li>
+                <li>Finaliza con una letra o un dígito</li>
+                <li>Solamente se utiliza letra, dígitos y guiones</li>
+                <li>Debe tener menos de 64 caracteres de longitud</li>
+            </ul>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Configuracion de dispositivos Cisco: Contraseñas</ion-card-title>
+            <ion-card-subtitle>Configuración de contraseñas</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <ul>
+                <li>
+                    Utilice contraseñas seguras
+                </li>
+                <p>Utilice el comando <b>enable secret mipassword</b> y no el comando <b>enable password mipassword </b></p>
+                <li>
+                    Evite volver a utilizar contraseñas
+                </li>
+            </ul>
+            <br>
+            <ion-card-subtitle>Protección del acceso de los dispositivos</ion-card-subtitle>
+            <ul>
+                <li>
+                    Proteja el acceso a los modos EXEC con privilegios y EXEC del usuario con una contraseña.
+                </li>
+            </ul>
+            <p>El comando <b>enable secret</b> proporciona mayor seguridad porque la contraseña está cifrada. Veamos cómo hacerlo en la consola:</p>
+            <br>
+            <ion-img src="../../../../../assets/img/cisco1/2.PNG"> </ion-img> <br>
+            <p>
+                Mi contraseña es <b>ccnadesdecero</b>, y si salgo (exit) para volver entrar al modo privilegiado me pedirá ingresar la contraseña.
+            </p>
+            <br>
+            <ion-img src="../../../../../assets/img/cisco1/3.PNG"> </ion-img> <br>
+            <ul>
+                <li>
+                    Proteja las líneas de terminales virtuales con una contraseña Se debe aportar seguridad al puerto de consola. Así se reducen las posibilidades de que personal no autorizado conecte físicamente un cable al dispositivo y obtenga acceso a él.
+                </li>
+            </ul>
+            <p>
+                Lo configuramos de la siguiente manera: (mi contraseña será ccnadesdecero)
+            </p>
+            <br>
+            <ion-img src="../../../../../assets/img/cisco1/4.PNG"> </ion-img> <br>
+            <p>
+                Las líneas vty permiten el acceso a un dispositivo Cisco a través de Telnet o SSH. La cantidad de líneas vty admitidas varía según el tipo de dispositivo y la versión de IOS. Por supuesto debemos protegerlas con contraseña y lo hacemos de la siguiente
+                manera: (mi contraseña será <b>ccnadesdecero</b>)
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/5.PNG"> </ion-img> <br>
+            <ion-card-subtitle>Cifrado de las contraseñas</ion-card-subtitle>
+            <ul>
+                <li>Cisco IOS muestra las contraseñas en texto sin formato de manera predeterminada.</li>
+                <li>Las contraseñas se deben cifrar.</li>
+            </ul>
+            <p>
+                El comando <b>service password-encryption</b> impide que las contraseñas aparezcan como texto no cifrado cuando se visualiza la configuración. El propósito de este comando es evitar que personas no autorizadas vean las contraseñas en el
+                archivo de configuración. Una vez que se aplica el comando, cancelar el servicio de encriptación no revierte la encriptación. <br><br> Así es como aparecen las contraseñas antes de ejecutar el comando:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/6.PNG"> </ion-img> <br>
+            <p>
+                Y así es como aparecen las contraseñas después de ejecutar el comando:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/7.PNG"> </ion-img> <br>
+            <ion-card-subtitle>
+                Mensajes de aviso
+            </ion-card-subtitle>
+            <ul>
+                <li>
+                    Los mensajes de aviso son una parte importante del proceso legal en caso de que se inicie una demanda por ingreso no autorizado a un dispositivo.
+                </li>
+                <li>
+                    No es adecuado utilizar palabras que sugieran que “se invita” al usuario a iniciar sesión o que es “bienvenido”.
+                </li>
+                <li>
+                    Con frecuencia, se usa para notificaciones legales, ya que se visualiza en todas las terminales conectadas.
+                </li>
+            </ul>
+            <p>
+                El comando para el mensaje de aviso en dispositivos Cisco es <b>banner motd</b> y se configura de la siguiente manera:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/8.PNG"> </ion-img> <br>
+            <p>
+                Entonces, al momento de acceder al dispositivo nuevamente aparecerá el siguiente aviso:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/9.PNG"> </ion-img> <br>
+        </ion-card-content>
+    </ion-card>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Configuración de dispositivos Cisco: Guardar configuración
+            </ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Finalmente, una vez realizado la configuración básica de los dispositivos IOS, pasamos a guardar la configuración. Primero veamos los dos archivos de sistema que almacenan la configuración de dispositivos:
+            </p>
+            <ul>
+                <li>
+                    <b>startup-config:</b> el archivo almacenado en la memoria no volátil de acceso aleatorio (NVRAM) que contiene todos los comandos que utilizará el dispositivo durante el inicio o reinicio. La memoria <b>NVRAM no pierde su contenido </b>                    cuando el dispositivo se desconecta.
+                </li>
+                <li>
+                    <b>running-config: </b>el archivo almacenado en la memoria de acceso aleatorio (RAM) que refleja la configuración actual. La modificación de una configuración en ejecución afecta el funcionamiento de un dispositivo Cisco de inmediato.
+                    <b>La memoria RAM es volátil.</b> Pierde todo el contenido cuando el dispositivo se apaga o se reinicia.
+                </li>
+            </ul>
+            <p>
+                Entonces para guardar la configuración realizada “copiamos” el archivo de “ejecución” hacía el archivo de “inicialización”, de la siguiente manera:
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/10.PNG"> </ion-img> <br>
+
+            <p>
+                Consideraciones finales:
+            </p>
+            <ul>
+                <li>
+                    Si los cambios realizados en la configuración en ejecución no tienen el efecto deseado y el archivo running-config aún no se ha guardado puede restablecer la configuración inicial con el comando <b>reload</b>.
+                </li>
+            </ul>
+            <ion-img src="../../../../../assets/img/cisco1/11.PNG"> </ion-img> <br>
+            <p>
+                Así mismo, si quiere eliminar la configuración de inicio utilice el comando <b>erase startup-config</b>
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/12.PNG"> </ion-img> <br>
+            <p>
+                Finalmente, en un switch también se debe emitir el comando delete vlan.dat
+            </p>
+            <ion-img src="../../../../../assets/img/cisco1/13.PNG"> </ion-img> <br>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

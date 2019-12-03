@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Introducción y beneficios de VLAN</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Segmentación de VLAN: Introducción
+            </ion-card-title>
+            <ion-card-subtitle>Definicion de VLAN</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Las VLAN proporcionan una manera de agrupar dispositivos dentro de una LAN. Un grupo de dispositivos dentro de una VLAN se comunica como si estuvieran conectados al mismo cable. Las VLAN se basan en conexiones lógicas, en lugar de conexiones físicas.
+            </p>
+            <p>
+                Una red de área local virtual (VLAN) permiten que el administrador divida las redes en segmentos según factores como la función, el equipo del proyecto o la aplicación, sin tener en cuenta la ubicación física del usuario o del dispositivo. Los dispositivos
+                dentro de una VLAN funcionan como si estuvieran en su propia red independiente, aunque compartan una misma infraestructura con otras VLAN. Cualquier puerto de switch puede pertenecer a una VLAN, y los paquetes de unidifusión, difusión
+                y multidifusión se reenvían y saturan solo las estaciones terminales dentro de la VLAN donde se originan los paquetes. Cada VLAN se considera una red lógica diferente. Los paquetes destinados a estaciones que no pertenecen a la VLAN se
+                deben reenviar a través de un dispositivo que admita el routing.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco2/tema4/1.png">
+
+            </ion-img> <br>
+            <ion-card-subtitle>
+                Beneficios de las redes VLAN
+            </ion-card-subtitle>
+            <P>
+                Las redes VLAN facilitan el diseño de una red para dar soporte a los objetivos de una organización. Los principales beneficios de utilizar las VLAN son los siguientes:
+            </P>
+            <ul>
+                <li> <b> Seguridad: </b> los grupos que tienen datos sensibles se separan del resto de la red, disminuyendo las posibilidades de que ocurran violaciones de información confidencial. Como se muestra en la Imagen 2, las computadoras del cuerpo
+                    docente están en la VLAN 10 y separadas por completo del tráfico de datos de los estudiantes y los Invitados.</li>
+                <li> <b> Reducción de costos: </b> el ahorro de costos se debe a la poca necesidad de actualizaciones de red costosas y al uso más eficaz de los enlaces y del ancho de banda existentes.</li>
+                <li> <b> Mejor rendimiento: </b> la división de las redes planas de capa 2 en varios grupos de trabajo lógicos (dominios de difusión) reduce el tráfico innecesario en la red y mejora el rendimiento.</li>
+                <li> <b> Reducción del tamaño de los dominios de difusión: </b> la división de una red en redes VLAN reduce la cantidad de dispositivos en el dominio de difusión. Como se muestra en la Imagen 2, existen seis computadoras en esta red, pero hay
+                    tres dominios de difusión: Cuerpo docente, Estudiantes e Invitados.</li>
+                <li> <b> Mayor eficiencia del personal de TI: </b> las VLAN facilitan el manejo de la red debido a que los usuarios con requerimientos similares de red comparten la misma VLAN. También es fácil para el personal de TI identificar la función
+                    de una VLAN colocándole un nombre.</li>
+                <li> <b> Administración más simple de aplicaciones y proyectos: </b> las VLAN agregan dispositivos de red y usuarios para admitir los requisitos geográficos o comerciales. Al tener características diferentes, se facilita la administración de
+                    un proyecto o el trabajo con una aplicación especializada.</li>
+
+
+
+            </ul>
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>
