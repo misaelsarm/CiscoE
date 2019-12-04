@@ -1,9 +1,89 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>tuneles-gre</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Túneles GRE</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Túneles GRE: Características y Configuración
+            </ion-card-title>
+            <ion-card-subtitle>
+                ¿Qué es GRE?
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <p>La encapsulación de routing genérico (GRE) es un ejemplo de un protocolo de tunneling de VPN de sitio a sitio básico y no seguro. GRE es un protocolo de tunneling desarrollado por Cisco que puede encapsular una amplia variedad de tipos de
+                paquete de protocolo dentro de túneles IP, lo que crea un enlace punto a punto virtual a los routers Cisco en puntos remotos a través de una internetwork IP.</p>
+            <p>
+                GRE está diseñada para administrar el transporte del tráfico multiprotocolo y de multidifusión IP entre dos o más sitios, que probablemente solo tengan conectividad IP. Puede encapsular varios tipos de paquete de protocolo dentro de un túnel IP.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco4/tema3/1.png"></ion-img><br>
+            <ion-card-subtitle>
+                Carcterísticas de GRE
+            </ion-card-subtitle>
+            <p>
+                El tunneling IP que utiliza GRE habilita la expansión de la red a través de un entorno de backbone de protocolo único. Esto se logra mediante la conexión de subredes multiprotocolo en un entorno de backbone de protocolo único.
+            </p>
+            <p>Las características de GRE son las siguientes:</p>
+            <ul>
+                <li> GRE se define como un estándar IETF (RFC 2784). </li>
+                <li> En el encabezado IP externo, se utiliza el número 47 en el campo de protocolo para indicar que lo que sigue es un encabezado GRE. </li>
+                <li> La encapsulación de GRE utiliza un campo de tipo de protocolo en el encabezado GRE para admitir la encapsulación de cualquier protocolo de capa 3 del modelo OSI. Los tipos de protocolo se definen en RFC 1700 como “EtherTypes”. </li>
+                <li> GRE en sí misma no tiene estado; de manera predeterminada, no incluye ningún mecanismo de control de flujo. </li>
+                <li> GRE no incluye ningún mecanismo de seguridad sólido para proteger su contenido. </li>
+                <li> El encabezado GRE, junto con el encabezado de tunneling IP que se indica en la ilustración, crea por lo menos 24 bytes de sobrecarga adicional para los paquetes que se envían por túnel. </li>
+            </ul>
+            <ion-card-subtitle>
+                Configuración de túneles GRE
+            </ion-card-subtitle>
+            <P>
+                GRE se utiliza para crear un túnel VPN entre dos sitios, como se muestra en la Imagen 3.
+            </P>
+            <ion-img src="../../../../../assets/img/cisco4/tema3/2.png"></ion-img> <br>
+            <p>Para implementar un túnel GRE, el administrador de red primero debe descubrir las direcciones IP de las terminales. Después, se deben seguir cinco pasos para configurar un túnel GRE:</p>
+            <ul>
+                <li> Paso 1. Cree una interfaz de túnel con el comando interface tunnel number.</li>
+                <li> Paso 2. Especifique la dirección IP de origen del túnel.</li>
+                <li> Paso 3. Especifique la dirección IP de destino del túnel.</li>
+                <li> Paso 4. Configure una dirección IP para la interfaz de túnel.</li>
+                <li> Paso 5. (Optativo) Especifique el modo de túnel GRE como modo de interfaz de túnel. El modo de túnel GRE es el modo predeterminado de interfaz de túnel para el software IOS de Cisco.</li>
+            </ul>
+            <ion-card-subtitle>
+                Comandos de configuración de túneles GRE
+            </ion-card-subtitle>
+            <ion-img src="../../../../../assets/img/cisco4/tema3/3.png"></ion-img> <br>
+            <p>Se detalla una configuración básica de túnel GRE para el router R1:</p>
+            <ion-img src="../../../../../assets/img/cisco4/tema3/4.png"></ion-img> <br>
+            <p>La configuración del R2 refleja la configuración del R1:</p>
+            <ion-img src="../../../../../assets/img/cisco4/tema3/5.png"></ion-img> <br>
+            <ion-card-subtitle>
+                Descripción de los comandos
+            </ion-card-subtitle>
+            <p>
+                Las descripciones de los comandos individuales de túnel GRE se muestran en la figura 4.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco4/tema3/6.PNG"></ion-img> <br>
+            <ion-card-subtitle>
+                Veficiación del tunel GRE
+            </ion-card-subtitle>
+            <p> Existen varios comandos que se pueden utilizar para controlar los túneles GRE y resolver los problemas relacionados. Para determinar si la interfaz de túnel está activa o inactiva, utilice el comando show ip interface brief.</p>
+            <ion-img src="../../../../../assets/img/cisco4/tema3/7.png"></ion-img> <br>
+            <p>
+                Para verificar el estado de un túnel GRE, utilice el comando show interface tunnel.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco4/tema3/8.png"></ion-img> <br>
+            <p>
+                Si también se configuró OSPF para intercambiar rutas a través del túnel GRE, verifique que se haya establecido una adyacencia OSPF a través de la interfaz de túnel con el comando show ip ospf neighbor. En la figura 2, observe que la dirección de interconexión
+                para el vecino OSPF está en la red IP creada para el túnel GRE.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco4/tema3/9.png"></ion-img> <br>
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>

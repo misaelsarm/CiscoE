@@ -1,9 +1,88 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>protocolo-punto-a-punto</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Protocolo punto a punto</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Funcionamiento de Protocolo Punto a Punto (PPP)
+            </ion-card-title>
+            <ion-card-subtitle>
+                ¿Que es PPP
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                La encapsulación PPP (Protocolo Punto a Punto) se diseñó cuidadosamente para conservar la compatibilidad con el hardware más usado que la admite.
+            </p>
+            <p>
+                PPP encapsula tramas de datos para transmitirlas a través de enlaces físicos de capa 2. PPP establece una conexión directa mediante cables seriales, líneas telefónicas, líneas troncales, teléfonos celulares, enlaces de radio especializados o enlaces de
+                fibra óptica.
+            </p>
+            <p>
+                El Protocolo Punto a Punto contiene tres componentes principales:
+            </p>
+            <ul>
+                <li> Entramado del estilo de HDLC para transportar paquetes multiprotocolo a través de enlaces punto a punto. </li>
+                <li> Protocolo de control de enlace (LCP) extensible para establecer, configurar y probar la conexión de enlace de datos. </li>
+                <li> Familia de protocolos de control de red (NCP) para establecer y configurar distintos protocolos de capa de red. PPP permite el uso simultáneo de varios protocolos de capa de red. </li>
+
+            </ul>
+            <ion-card-subtitle>
+                Ventajas de PPP
+            </ion-card-subtitle>
+            <p>
+                El uso de PPP presenta muchas ventajas, incluido el hecho de que no es exclusivo. PPP incluye muchas funciones que no están disponibles en HDLC:
+            </p>
+            <ul>
+                <li>La característica de administración de calidad del enlace, la cual se muestra en la ilustración, controla la calidad del enlace. Si se detectan demasiados errores, PPP desactiva el enlace. </li>
+
+                <li>PPP admite la autenticación PAP y CHAP. Esta característica se explica y se práctica más adelante en otra sección.</li>
+
+            </ul>
+            <ion-card-subtitle>
+                Arquitectura de capas PPP
+            </ion-card-subtitle>
+            <p>
+                Una arquitectura en capas es un modelo, un diseño, o un plano lógico que ayuda en la comunicación de las capas que se interconectan.
+            </p>
+            <p>
+                En la ilustración, se compara la arquitectura en capas de PPP con el modelo de interconexión de sistema abierto (OSI).
+            </p>
+            <p>
+                PPP y OSI comparten la misma capa física, pero PPP distribuye las funciones de LCP y NCP de manera diferente.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco4/tema2/1.png"></ion-img> <br>
+            <ion-card-subtitle>
+                PPP: Protocolo de Control de Enlace (LCP)
+            </ion-card-subtitle>
+            <p>
+                LCP funciona dentro de la capa de enlace de datos y cumple una función en el establecimiento, la configuración y la prueba de la conexión de enlace de datos. Además, establece el enlace punto a punto.
+            </p>
+            <p>
+                LCP proporciona la configuración automática de las interfaces en cada extremo, incluido lo siguiente:
+            </p>
+            <ul>
+                <li>Manejo de distintos límites en el tamaño de paquete</li>
+                <li>Detección de errores comunes de configuración</li>
+                <li>Finalización del enlace</li>
+                <li>Determinación de cuándo un enlace funciona correctamente o cuándo falla</li>
+            </ul>
+            <ion-card-subtitle>
+                PPP: Protocolo de Control de Red (NCP)
+            </ion-card-subtitle>
+            <P>
+                PPP permite que varios protocolos de capa de red funcionen en el mismo enlace de comunicación. Para cada protocolo de capa de red que se usa, PPP utiliza un NCP separado. Por ejemplo, IPv4 utiliza el protocolo de control de IP (IPCP) e IPv6 utiliza el
+                protocolo de control de IPv6 (IPv6CP).
+            </P>
+            <ion-img src="../../../../../assets/img/cisco4/tema2/2.png"></ion-img> <br>
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>

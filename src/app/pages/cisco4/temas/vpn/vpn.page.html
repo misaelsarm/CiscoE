@@ -1,9 +1,81 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>vpn</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>VPN</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                VPN: definición, beneficios y tipos
+            </ion-card-title>
+            <ion-card-subtitle>
+                ¿Qué es una VPN
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                Una VPN es una red privada creada mediante tunneling a través de una red pública, generalmente Internet. Una VPN es un entorno de comunicaciones en el que el acceso se controla de forma estricta para permitir las conexiones de pero dentro de una comunidad
+                de interés definida
+            </p>
+            <ion-card-subtitle>
+                Beneficios de las VPN
+            </ion-card-subtitle>
+            <p>
+                Como se muestra en la ilustración, una VPN utiliza conexiones virtuales que se enrutan a través de Internet desde la red privada de una organización hasta el sitio remoto o el host del empleado. La información de una red privada se transporta de manera
+                segura a través de la red pública para formar una red virtual.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco4/tema4/1.png"></ion-img> <br>
+            <p>
+                Los beneficios de una VPN incluyen lo siguiente:
+            </p>
+            <ul>
+                <li> Ahorro de costos: las VPN permiten que las organizaciones utilicen un transporte externo de Internet rentable para conectar oficinas remotas y usuarios remotos al sitio principal; por lo tanto, se eliminan los costosos enlaces WAN dedicados
+                    y los bancos de módem. Además, con la llegada de las tecnologías rentables de ancho de banda alto, como DSL, las organizaciones pueden utilizar VPN para reducir los costos de conectividad y, al mismo tiempo, aumentar el ancho de banda
+                    de la conexión remota. </li>
+                <li> Escalabilidad: las VPN permiten que las organizaciones utilicen la infraestructura de Internet dentro de los ISP y los dispositivos, lo que facilita la tarea de agregar nuevos usuarios. Por lo tanto, las organizaciones pueden agregar una
+                    gran cantidad de capacidad sin necesidad de aumentar considerablemente la infraestructura. </li>
+                <li> Compatibilidad con la tecnología de banda ancha: las redes VPN permiten que los trabajadores móviles y los empleados a distancia aprovechen la conectividad por banda ancha de alta velocidad, como DSL y cable, para acceder a las redes de
+                    sus organizaciones. La conectividad por banda ancha proporciona flexibilidad y eficacia. Las conexiones por banda ancha de alta velocidad también proporcionan una solución rentable para conectar oficinas remotas. </li>
+                <li> Seguridad: las VPN pueden incluir mecanismos de seguridad que proporcionan el máximo nivel de seguridad mediante protocolos de cifrado y autenticación avanzados que protegen los datos contra el acceso no autorizado. </li>
+            </ul>
+            <ion-card-subtitle>
+                VPN de sitio a sitio
+            </ion-card-subtitle>
+            <p>
+                Existen dos tipos de redes VPN:
+            </p>
+            <ul>
+                <li> Sitio a sitio</li>
+                <li> Acceso remoto</li>
+            </ul>
+            <ion-card-subtitle>
+                VPN de sitio a sitio
+            </ion-card-subtitle>
+            <p>
+                Una VPN de sitio a sitio se crea cuando los dispositivos en ambos lados de la conexión VPN conocen la configuración de VPN con anticipación, como se muestra en la ilustración.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco4/tema4/2.png"></ion-img> <br>
+            <ion-card-subtitle>
+                VPN de acceso remoto
+            </ion-card-subtitle>
+            <p>Una VPN de acceso remoto se crea cuando la información de VPN no se configura de forma estática, pero permite el intercambio dinámico de información y se puede habilitar y deshabilitar. Las VPN de acceso remoto admiten una arquitectura cliente/servidor,
+                en la que el cliente VPN (host remoto) obtiene acceso seguro a la red empresarial mediante un dispositivo del servidor VPN en el perímetro de la red.</p>
+            <ion-img src="../../../../../assets/img/cisco4/tema4/3.png"></ion-img> <br>
+            <p>
+                Las VPN de acceso remoto se utilizan para conectar hosts individuales que deben acceder a la red de su empresa de forma segura a través de Internet. La conectividad a Internet que utilizan los trabajadores a distancia suele ser una conexión por banda
+                ancha, DSL, cable o inalámbrica, como se indica en la ilustración.
+            </p>
+            <p>
+                Es posible que se deba instalar un software de cliente VPN en la terminal del usuario móvil; por ejemplo, cada host puede tener el software Cisco AnyConnect Secure Mobility Client instalado. Cuando el host intenta enviar cualquier tipo de tráfico, el
+                software Cisco AnyConnect VPN Client encapsula y cifra este tráfico. Después, los datos cifrados se envían por Internet al gateway VPN en el perímetro de la red de destino. Al recibirlos, el gateway VPN se comporta como lo hace para las
+                VPN de sitio a sitio.
+            </p>
+        </ion-card-content>
+    </ion-card>
 
 </ion-content>

@@ -1,9 +1,69 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>encapsulacion-hdlc</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>Encapsulación HDLC</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Encapsulación HDLC: configuración y resolución de problemas
+            </ion-card-title>
+            <ion-card-subtitle>
+                Encapsulación HDLC
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                HDLC es un protocolo sincrónico de capa de enlace de datos orientado a bits desarrollado por la Organización Internacional para la Estandarización (ISO). El estándar actual para HDLC es ISO 13239.
+            </p>
+            <p>
+                HDLC se desarrolló a partir del estándar de control de enlace de datos síncronos (SDLC) propuesto en la década de los setenta. Además, proporciona servicio orientado a la conexión y sin conexión.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco4/tema1/1.png"></ion-img> <br>
+            <ion-card-subtitle>
+                Configuración de la encapsulación HDLC
+            </ion-card-subtitle>
+            <p>
+                HDLC de Cisco es el método de encapsulación predeterminado que usan los dispositivos de Cisco en las líneas seriales síncronas.
+            </p>
+            <p>
+                Utilice HDLC de Cisco como protocolo punto a punto en las líneas arrendadas entre dos dispositivos de Cisco. Si conecta dispositivos que no son de Cisco, utilice PPP síncrono.
+            </p>
+            <p>
+                Si se modificó el método de encapsulación predeterminado, utilice el comando encapsulation hdlc en el modo EXEC privilegiado para volver a habilitar HDLC.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco4/tema1/2.png"></ion-img> <br>
+            <ion-card-subtitle>
+                Resolución de problemas de una interfaz serial
+            </ion-card-subtitle>
+            <p>
+                El resultado del comando show interfaces serial muestra información específica de las interfaces seriales.
+            </p>
+            <p>
+                Cuando se configura HDLC, debe figurar encapsulation HDLC en el resultado, como se destaca en la Imagen 4.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco4/tema1/3.png"></ion-img> <br>
+            <p>
+                Serial 0/0/0 is up, Line Protocol is up indica que la línea está activa y en funcionamiento; encapsulation HDLC indica que la encapsulación serial predeterminada (HDLC) está habilitada.
+            </p>
+            <p>
+                El comando show controllers es otra herramienta de diagnóstico importante para la resolución de problemas de líneas seriales, como se muestra en la Imagen 5.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco4/tema1/4.png"></ion-img> <br>
+            <p>
+                El resultado indica el estado de los canales de la interfaz y si hay un cable conectado a la interfaz o no. En la ilustración, la interfaz serial 0/0/0 tiene un cable DCE V.35 conectado.
+            </p>
+            <p>
+                La sintaxis de los comandos varía, según la plataforma. Los routers Cisco serie 7000 utilizan una tarjeta controladora cBus para conectar enlaces seriales. Con estos routers, utilice el comando show controllers cbus.
+            </p>
+            <p>
+                Si la interfaz eléctrica es desconocida, el resultado correspondiente para el comando show interfaces serial muestra que la interfaz y el protocolo de línea están inactivos.
+            </p>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

@@ -8,5 +8,61 @@
 </ion-header>
 
 <ion-content>
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>
+                Protocolo EIGRP: Definición y características
+            </ion-card-title>
+            <ion-card-subtitle>
+                ¿Qué es EIGRP?
+            </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+            <p>
+                El protocolo de routing de gateway interior mejorado (EIGRP – Enhanced Interior Gateway Routing Protocol) es un protocolo de routing vector distancia avanzado desarrollado por Cisco Systems. Como lo sugiere el nombre, EIGRP es una mejora de otro protocolo
+                de routing de Cisco: el protocolo de routing de gateway interior (IGRP).
+            </p>
+            <ion-card-subtitle>
+                Características de EIGRP
+            </ion-card-subtitle>
+            <p>
+                EIGRP se basa en el principio clave del protocolo de routing vector distancia, según el cual la información acerca del resto de la red se obtiene a partir de vecinos conectados directamente.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco3/tema5/1.png">
+            </ion-img> <br>
+            <ul>
+                <li> <b> Algoritmo de actualización difusa.</b> El algoritmo de actualización por difusión (DUAL), constituye el centro del protocolo de routing. DUAL garantiza rutas de respaldo y sin bucles en todo el dominio de routing. Al usar DUAL, EIGRP
+                    almacena todas las rutas de respaldo disponibles a los destinos, de manera que se puede adaptar rápidamente a rutas alternativas si es necesario. </li>
+                <li> <b> Establecimiento de adyacencias de vecinos.</b> EIGRP establece relaciones con routers conectados directamente que también están habilitados para EIGRP. Las adyacencias de vecinos se usan para rastrear el estado de esos vecinos. </li>
+                <li> <b> Protocolo de transporte confiable.</b> El protocolo de transporte confiable (RTP) es exclusivo de EIGRP y se encarga de la entrega de los paquetes EIGRP a los vecinos. </li>
+                <li> <b> Actualizaciones parciales y limitadas.</b> En lo que respecta a sus actualizaciones, en EIGRP se utilizan los términos “parcial” y “limitada”. A diferencia de RIP, EIGRP no envía actualizaciones periódicas, y las entradas de ruta no
+                    vencen.
+                </li>
 
+                <li> <b> Balanceo de carga de mismo costo o con distinto costo. </b>EIGRP admite balanceo de carga de mismo costo y balanceo de carga con distinto costo, lo que permite a los administradores distribuir mejor el flujo de tráfico en sus redes.
+                </li>
+            </ul>
+            <ion-card-subtitle>
+                Tipos de paquetes EIGRP
+            </ion-card-subtitle>
+            <p>
+                EIGRP utiliza cinco tipos de paquetes distintos, algunos en pares. Los tipos de paquetes EIGRP también reciben el nombre de “formatos de paquetes EIGRP” o “mensajes EIGRP”.
+            </p>
+            <p>
+                Los cinco tipos de paquetes EIGRP incluyen:
+            </p>
+            <ul>
+                <li> <b> Paquetes de saludo: </b> se utilizan para descubrir a los vecinos y para mantener las adyacencias de vecinos.</li>
+                <li> <b> Paquetes de actualización: </b> propagan información de routing a vecinos EIGRP.</li>
+                <li> <b> Paquetes de acuse de recibo: </b> se utilizan para acusar recibo de un mensaje EIGRP que se envió con entrega confiable.</li>
+                <li> <b> Paquetes de consulta: </b> se utilizan para consultar rutas de vecinos.</li>
+                <li> <b> Paquetes de respuesta: </b> se envían en respuesta a consultas EIGRP.</li>
+            </ul>
+            <p>
+                En la Imagen 5, se muestra que los mensajes EIGRP normalmente se encapsulan en paquetes IPv4 o IPv6.
+            </p>
+            <ion-img src="../../../../../assets/img/cisco3/tema5/2.png">
+            </ion-img> <br>
+        </ion-card-content>
+    </ion-card>
 </ion-content>

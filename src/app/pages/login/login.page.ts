@@ -3,6 +3,7 @@ import { AngularFireAuth } from "@angular/fire/auth";
 import { auth } from "firebase/app";
 import { AlertController } from "@ionic/angular";
 import { Router } from "@angular/router";
+import { AuthService } from "../../services/auth.service";
 
 @Component({
   selector: "app-login",
@@ -10,24 +11,20 @@ import { Router } from "@angular/router";
   styleUrls: ["./login.page.scss"]
 })
 export class LoginPage implements OnInit {
-  username: string = "";
-  password: string = "";
+  public username: string;
+  private password: string;
 
   constructor(
-    public afAuth: AngularFireAuth,
+    private authService: AuthService,
     public alert: AlertController,
     public router: Router
   ) {}
 
   ngOnInit() {}
 
-  async login() {
-    const { username, password } = this;
+  login() {
     try {
-      const res = await this.afAuth.auth.signInWithEmailAndPassword(
-        username,
-        password
-      );
+      this.authService.loginUserEmail(this.username, this.password);
 
       this.showAlert("CiscoE", "¡Bienvenido!");
       this.router.navigate(["/tabs/home"]);
